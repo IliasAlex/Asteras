@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+    <center>
+        <div class="logo">
+            <img alt="Google" src="img/asterasLogo.png">
+        </div>
+        <form action="http://localhost:8080/Asteras/Results">
+            <select id = "options" >
+                <option value="1">Query</option>
+                <option value="2">Cosine Similarity</option>
+            </select>
+            <div class="bar">
+                <input name="query" id="query" class="searchbar" type="text" title="Search">
+            </div>
+            <div>
+                <br>
+                <label>K: </label>
+                <input name ="k" id ="k" class ="text" type="text" title ="K" value = 5>
+            </div>
+            <div class="buttons">
+                <button id="search_btn" class="button" type="button">Search</button>
+                <button id="insert_delete_btn" class="button" type="button">Insert/Delete Author</button>
+            </div>
+        </form>    
+
+
+
+    </body> 
+</html><!-- comment -->
+
+<script>
+    function query() {
+        q = document.getElementById("query").value;
+        var e = document.getElementById("options");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+        if ( text == "Query"){
+            window.location.href = 'http://localhost:8080/Asteras/Results?query=' + q + "&k=" + document.getElementById("k").value;
+        }
+        else{
+            window.location.href = 'http://localhost:8080/Asteras/CosSim?query=' + q + "&k=" + document.getElementById("k").value;
+        }
+       
+    }
+
+    document.getElementById("search_btn").addEventListener("click", query);
+
+    function insert_delete() {
+        value = document.getElementById("query").value;
+        window.location.href = 'http://localhost:8080/Asteras/Insert_delete';
+    }
+    document.getElementById("insert_delete_btn").addEventListener("click", insert_delete);
+</script> 
