@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <servlet>
+        <servlet-name>Results</servlet-name>
+        <servlet-class>Asteras.Results</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Results</servlet-name>
+        <url-pattern>/Results</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BibFileUpload</servlet-name>
+        <servlet-class>Asteras.BibFileUpload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BibFileUpload</servlet-name>
+        <url-pattern>/BibFileUpload</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DeleteAuthor</servlet-name>
+        <servlet-class>Asteras.DeleteAuthor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAuthor</servlet-name>
+        <url-pattern>/DeleteAuthor</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Insert_delete</servlet-name>
+        <servlet-class>Asteras.Insert_delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Insert_delete</servlet-name>
+        <url-pattern>/Insert_delete</url-pattern>
+    </servlet-mapping>
+</web-app>
