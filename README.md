@@ -1,2 +1,2 @@
 # Asteras
-A simple search engine for similarity between researchers
+A simple web base search engine for similarity between researchers using Lucene 
